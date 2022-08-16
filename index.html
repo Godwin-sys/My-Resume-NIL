@@ -1,0 +1,418 @@
+<!--Author: GODWIN TUKULA-->
+
+  <!DOCTYPE html>
+<html lang="en">
+<!--Css-->
+<!--Heading Using Animation Css
+  --H1 Heading to display Colors each Secounds-->
+<style> /*H1 css*/
+.main-heading
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 50px;
+}
+/*@keyframes is for animations*/
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+</style> <!--Main H1 Closes-->
+
+
+<!--About Me-->
+<style>/*ABout css for MOdification*/
+    h2 { color: #2f2135; 
+        font-family: 'Rouge Script';
+        }
+    p { 
+        color: #53502e; 
+        font-family: 'Carme', sans-serif;
+       }
+</style> <!--End of About css-->
+
+<!--Add style tag for css to be enabled-->
+<!--Css for Making Slides movement-->
+<!--Caruosel for Slide show-->
+<style>
+    /* default stylings */
+    * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+  
+        /* background color to body for Carousel */
+        body {
+            background-color: #8f38525d 0%,
+            }
+  
+        /* ----- container stylings: 
+        -> centers the whole content of the page
+        -> defines width and height for container ----- */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            width: 800px;
+            height: 600px;
+        }
+        /* ----- end of container stylings ----- */
+
+  
+        /*padding to main heading */
+        .main-heading {
+            padding: 2rem 0 2rem 0;
+        }
+  
+        .content {
+            position: relative;
+        }
+  
+        /* ----- carousel content stylings ----- */
+        /* places the carousel content on center of the carousel */
+        .carousel-content {
+            position: absolute;
+            /*to center the content horizontally and vertically*/
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            text-align: center;
+            z-index: 50;
+        }
+        .carousel-heading {
+            font-size: 3rem;
+            color: #308d46;
+            margin-bottom: 1rem;
+        }
+        /*----- end of carousel content stylings ----- */
+  
+        /* ----- slideshow stylings ----- */
+        .slideshow {
+            height: 100%;
+            overflow: hidden; /* to hide slides in x-direction */
+            position: relative;
+        }
+        /* wrapper which wraps all the slideshow images stylings */
+        .slideshow-wrapper {
+            display: flex;
+            /* We give it width as 300% because we are making a 
+               3 image carousel. */
+            width: 300%;
+            height: 100%;
+            position: relative;
+
+            /* animation settings to display in 20 Secounds */
+            animation: slideshow 20s infinite;
+         }
+         /*define width and height*/
+         .slide {
+            width: 300%;
+            height: 200%;
+         }
+         .slide-img {
+            width: 200%;
+            height: 200%;
+            object-fit: cover;
+
+         }
+   
+        /* @keyframes are used to provide animations */
+        @keyframes slideshow {
+            0%  { left: 0; }
+            10% { left: 0; }
+            15% { left: -100%; }
+            25% { left: -100%; }
+            30% { left: -200%; }
+            40% { left: -200%; }
+            45% { left: -300%; }
+            55% { left: -300%; }
+            60% { left: -200%; }
+            70% { left: -200%; }
+            75% { left: -100%; }
+            85% { left: -100%; }
+            90% { left: 0%; }
+        }
+        /* ----- end of Animation        ------- -------- ------- ----- */
+        /* ----- end of slideshow stylings ----- */
+  
+        /* ----- carousel control buttons stylings ----- */
+        .slide-btn {
+            background-color: #bbb;
+            border-radius: 50%;
+            border: .2rem solid #d38800;
+            width: 1.2rem;
+            height: 1.2rem;
+            outline: none;
+            cursor: pointer;
+            /* stylings for positioning the buttons at
+               the bottom of the carousel */
+            position: absolute;
+            bottom: 3%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 70;
+        }
+        /* As we provide position as absolute, 
+        the buttons places one over the other. 
+        So, we have to place them individually
+        at their correct positions. */
+        .slide-btn-1 {
+            left: 45%;
+        }
+        .slide-btn-2 {
+            left: 50%;
+        }
+        .slide-btn-3 {
+            left: 55%;
+        }
+        .slide-btn-4:focus~.slideshow-wrapper {
+            animation: none;
+            left: -300%;}
+    
+        
+        /* When we focus on the particular button, the animation stops to that particular image 
+        to which the button is associated. */
+        .slide-btn-1:focus~.slideshow-wrapper {
+            animation: none;
+            left: 0;
+        }
+        .slide-btn-2:focus~.slideshow-wrapper {
+            animation: none;
+            left: -100%;
+        }
+        .slide-btn-3:focus~.slideshow-wrapper {
+            animation: none;
+            left: -200%;
+        }
+        .slide-btn-4:focus~.slideshow-wrapper {
+            animation: none;
+            left: -300%;
+        }
+        /* when we focus on the button, the background color changes */
+        .slide-btn:focus {
+            background-color: #308d46;
+        }
+        /* ----- end of carousel control buttons stylings ----- */
+
+/*Img to be round*/
+img{
+    border-radius: 50%;
+}
+  
+/*IMAGES FOR LINKED AND GITHUB*/
+.Linkedin-Logo
+{
+    border-radius: 50%;
+    position: relative;
+
+}
+.Github{
+    border-radius: 50%;
+    position: relative;
+}
+
+
+/*Button Design */
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+/* Linkedin Button */
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid black;
+}
+.button1:hover {
+  background-color: black;
+  color: white;
+}/* END Linkedin Button */
+
+/*Github Button */
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #07090a;
+}
+
+.button2:hover {
+  background-color: black;
+  color: white;
+}/* END of Github Button */
+
+.flex-parent {
+  display: flex;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+button.margin-right {
+  margin-right: 20px;
+}
+
+/*Footer*/
+footer{background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );}
+
+   
+</style> <!--CLOSING STYLE TAG-->
+
+<!--End of Css-->
+
+
+
+    <head> <!--heading that display at the top of the page -->
+        <title>Godwin Tukula Resume</title>
+    </head>
+
+    <!--BODY-->
+    <body>
+        
+        <!--Slides show-->
+         <!--adding carousel-->
+         <div class="container" style="background-color:  #fbf9fc" >
+            <!--MAIN HEADING OF CAROUSEL-->
+            <h1 class="main-heading" >RESUME OF GODWIN TUKULA</h1>
+            <!--Adding an Image next to the text-->
+        <div style="display:inline-block;vertical-align:top;">
+            <img src="image/Godwin.jpg" alt="Picture of Godwin Tukula" width="180px" lenght="80px">
+        
+        <!--Adding a Text next to the image-->
+        <div style="display:inline-block ;">
+             <!--About Me in a paragraph-->
+            <h2> ABOUT ME</h2>
+    
+        <P>I am a mature hard working individual who enjoys learning new thing and working with</P>
+        <P>a team or collaborating with other colleagues. Self-motivated student who is looking </P>
+        <P>forward to a career within the IT (Information Technology) department that will provide</P> 
+        <p> me with an opportunity that will stimulate my intellectual growth and experience,</p>
+        <P> whilst providing me with an opportunity to add tangible values to the organization </P>
+        <P>by showcasing my capabilities and all the knowledge that I have acquired in the </P>
+        <P>department during my varsity time.</P>
+        
+    </div>
+        </div>
+            <div class="content">
+                <!-- The content which is placed at the center of the carousel -->
+                <div class="carousel-content">
+                   <!--<h3>A computer science portal for geeks</h3>--->
+                    
+                </div>
+                <!--Adding Buttons in the Slides-->
+                <div class="slideshow">
+                    <!-- carousel control buttons -->
+                    <button class="slide-btn slide-btn-1"></button>
+                    <button class="slide-btn slide-btn-2"></button>
+                    <button class="slide-btn slide-btn-3"></button>
+                    
+                    <!-- carousel wrapper which contains Texts -->
+                    <!--CAROUSEL SLIDE 1-->
+                    <div class="slideshow-wrapper" style="background-color: rgb(117, 103, 22)">
+                        <div class="slide">
+                            <h3>QUALIFICATIONS</h3>
+                            <dl>
+                                <dt>DIPLOMA</dt>
+                                <dd>-Information Technology</dd>
+                                <dt>MATRIC</dt>
+                                <dd>- Mathematics & Physical Science</dd>
+                              </dl>
+                            
+                              <!--CAROUSEL SLIDE 2-->
+                        </div>
+                        <div class="slide">
+                            <h3>INTERESTS</h3>
+                            <dl>
+                                <dt>Chess</dt>
+                                <dd>- Tennis</dd>
+                                <dt>Animations</dt>
+                                <dd>- Music</dd>
+                              </dl>
+                             
+                        </div>
+
+                        <!--CAROUSEL SLIDE 3-->
+                        <div class="slide">
+                            <h3>WORK EXPERIENCE</h3>
+                            <dl>
+                                <dt>FREELANCER</dt>
+                                <dd>- Software developer</dd>
+                                <dt>ZENSAR TECHNOLOGIES </dt>
+                                <dd>- Software developer</dd>
+                              </dl>
+                            <!--<img class="slide-img" src="Image/340b.jpg">-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <footer>
+        <!--Adding a clickeable Image for Linked and Github 
+            * Image Class for Linked 
+            = Class to classify it in the css-->
+
+
+     <div class="flex-parent jc-center">        
+    <button class="button button1">
+            <a href="https://www.linkedin.com/in/godwin-tukula-53494a201"> 
+                <!--For Image to be clickable we add the img tag inside the link tag-->
+                <img  class="Linkedin-Logo" src="image/Linkedin-Logo.png" alt="Linkedin-Logo"
+                       width="180px" lenght="80px"></a> <!--End of Linkedin Image Clickabe tag-->
+
+    </button> <!--End Of Linked Button-->
+        
+            <!--Github
+            >A Image Tag inside link tag and Inside a Button tag
+            >To make the Button have Clickable Image Button  -->
+
+    <button class="button button2">
+            <a href="https://www.github.com">
+            <img  class="Github" src="image/github-logo-tile.png" alt="github-logo-tile" 
+                  width="180px" lenght="80px"></a> <!--End of Github Image Clickable tag-->
+
+    </button> <!--End of Git hub Button-->
+     </div>
+
+        
+    </footer>
+       </footer>
+      </body>
+
+    </html> 
+    
